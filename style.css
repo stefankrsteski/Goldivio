@@ -1,0 +1,26 @@
+/* Reset default spacing */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Full screen + background */
+body, html {
+    height: 100%;
+}
+
+/* Center content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #0b1f3a; /* dark blue */
+}
+
+/* Text styling */
+h1 {
+    color: white;
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+}
