@@ -6,18 +6,16 @@
 }
 
 html, body {
-    height: 100%;
     font-family: 'Inter', sans-serif;
+    height: 100%;
 }
 
 /* BODY */
 body {
-    background-color: #0b1f3a;  /* solid dark blue background */
+    background-color: #0b1f3a;  /* solid dark blue */
     color: white;
     display: flex;
     justify-content: center;  /* horizontal centering */
-    align-items: center;      /* vertical centering on desktop */
-    min-height: 100vh;
     padding: 20px;
     overflow-x: hidden;
 }
@@ -27,18 +25,23 @@ body {
     max-width: 1200px;
     width: 100%;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 /* HEADER */
 .header {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     width: 100%;
 }
 
 /* Title + subtitle container */
 .title-wrapper {
-    display: inline-block;     /* shrink-wrap width */
+    display: inline-block;     
     position: relative;
 }
 
@@ -46,7 +49,7 @@ body {
 .title-text {
     display: flex;
     flex-direction: column;
-    align-items: center;       /* center title & subtitle */
+    align-items: center;
 }
 
 /* Icon positioned to the left of the text (desktop) */
@@ -92,6 +95,7 @@ body {
 /* FEATURES GRID */
 .features {
     margin-top: 50px; /* space from Google Play button */
+    width: 100%;
 }
 
 .grid {
@@ -143,12 +147,6 @@ body {
 /* For screens below 900px (2 or 1 columns) */
 @media (max-width: 900px) {
 
-    body {
-        align-items: flex-start;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -159,6 +157,12 @@ body {
 
     .features {
         margin-top: 20px;
+    }
+
+    /* Move Google Play button below title and above cards */
+    .download {
+        margin-top: 20px;
+        order: 1;
     }
 
     /* Move icon above title */
@@ -178,5 +182,8 @@ body {
     .app-icon {
         font-size: 40px;
         margin-bottom: 10px;
+    }
+    .title {
+        font-size: 2rem;
     }
 }
