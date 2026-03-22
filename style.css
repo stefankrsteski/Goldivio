@@ -5,185 +5,181 @@
     padding: 0;
 }
 
-html, body {
-    font-family: 'Inter', sans-serif;
-    height: 100%;
-}
-
-/* BODY */
 body {
-    background-color: #0b1f3a;  /* solid dark blue */
+    font-family: 'Inter', sans-serif;
+    background: #0b1f3a;
     color: white;
-    display: flex;
-    justify-content: center;  /* horizontal centering */
-    padding: 20px;
-    overflow-x: hidden;
 }
 
 /* PAGE */
 .page {
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+/* NAV */
+.nav {
+    margin-bottom: 60px;
+}
+
+.nav-inner {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-}
-
-/* HEADER */
-.header {
-    position: relative;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-/* Title + subtitle container */
-.title-wrapper {
-    display: inline-block;     
-    position: relative;
-}
-
-/* Title + subtitle stack centered */
-.title-text {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-/* Icon positioned to the left of the text (desktop) */
-.app-icon {
-    position: absolute;
-    left: -60px;               
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.logo span.material-icons-outlined {
     color: gold;
 }
 
-/* Title styling */
-.title {
+/* HERO */
+.hero {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.hero h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-/* Subtitle styling */
-.subtitle {
-    font-size: 1.2rem;
-    margin-top: 4px;
-    opacity: 0.85;
+.hero h1 span {
+    color: gold;
 }
 
-/* GOOGLE PLAY */
-.download {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.8;
 }
 
-.google-play-button img {
-    height: 50px;
-    transition: transform 0.3s ease;
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background: gold;
+    color: black;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-decoration: none;
 }
 
-.google-play-button img:hover {
-    transform: scale(1.08);
+.btn.small {
+    padding: 8px 16px;
 }
 
-/* FEATURES GRID */
+.btn.large {
+    padding: 18px 36px;
+}
+
+/* FEATURES */
 .features {
-    margin-top: 50px; /* space from Google Play button */
-    width: 100%;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
 }
 
 /* CARDS */
 .card {
-    background: linear-gradient(145deg, #112b4a, #0d223d);
-    padding: 32px;
+    background: #112b4a;
+    padding: 24px;
     border-radius: 16px;
-    text-align: center;
-    transition: all 0.4s ease;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    background: linear-gradient(145deg, #163a63, #124272);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
-}
-
-/* ICONS */
-.card span.material-icons-outlined {
-    display: block;
-    font-size: 56px;
-    margin-bottom: 18px;
+.card span {
+    font-size: 40px;
     color: gold;
+    margin-bottom: 12px;
+    display: block;
 }
 
-/* TITLES */
 .card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
     margin-bottom: 10px;
 }
 
-/* TEXT */
 .card p {
-    font-size: 15px;
-    line-height: 1.6;
-    opacity: 0.85;
+    opacity: 0.8;
+}
+
+/* SCREENSHOTS */
+.screenshots {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.shots {
+	margin-top: 40px;
+    display: flex;
+    justify-content: center;   /* centers when content fits */
+    gap: 20px;
+    flex-wrap: wrap;           /* allows centering on larger screens */
+}
+
+.shots img {
+    width: 220px;
+    border-radius: 16px;
+	aspect-ratio: 9 / 20;       /* typical phone ratio */
+	border: 4px solid #000;     /* phone border */
+	border-radius: 45px;
+	overflow: hidden;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* DOWNLOAD */
+.download {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.download p {
+    margin: 10px 0 30px;
+    opacity: 0.8;
+}
+
+.download a img {
+    width: 200px;   /* adjust as needed */
+    height: auto;   /* maintain aspect ratio */
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 14px;
 }
 
 /* RESPONSIVE */
-/* For screens below 900px (2 or 1 columns) */
 @media (max-width: 900px) {
-
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .title {
-        font-size: 2.5rem;
-    }
-
-    .features {
-        margin-top: 20px;
-    }
-
-    /* Move Google Play button below title and above cards */
-    .download {
-        margin-top: 20px;
-        order: 1;
-    }
-
-    /* Move icon above title */
-    .app-icon {
-        position: static;
-        transform: none;
-        font-size: 45px;
-        margin-bottom: 12px;
-    }
 }
 
-/* For very small screens (<600px) */
 @media (max-width: 600px) {
     .grid {
         grid-template-columns: 1fr;
     }
-    .app-icon {
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
-    .title {
-        font-size: 2rem;
+
+    .hero h1 {
+        font-size: 2.2rem;
     }
 }
