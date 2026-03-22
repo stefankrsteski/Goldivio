@@ -1,142 +1,31 @@
-/* RESET */
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* BODY */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0b1f3a;
-    color: white;
-
+    margin: 0;
+    background: #0b1f3a;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    height: 100vh;
+    touch-action: pan-y;
 }
 
-/* PAGE */
-.page {
+.carousel {
+    position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px;
+    height: 80vh;
+    perspective: 1200px;
+    overflow: visible; /* allow side images to peek */
 }
 
-/* HEADER */
-.header {
-    text-align: center; /* center the title text */
-    margin-bottom: 50px;
-    position: relative; /* anchor for absolute positioning */
-}
-
-.title {
-    display: inline-block; /* shrink-wrap text */
-    font-size: 48px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin: 0;
-    position: relative; /* for absolute icon */
-}
-
-/* icon on the left without shifting title */
-.title .app-icon {
+.item {
     position: absolute;
-    right: 100%; /* move left of title */
     top: 50%;
-    transform: translateY(-50%) translateX(-12px); /* adjust spacing */
-    font-size: 50px;
-    color: white;
-}
-
-/* FEATURES */
-.features {
-    margin-bottom: 40px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-/* CARDS */
-.card {
-    background: #112b4a;
-    padding: 28px;
-    border-radius: 14px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-/* ICONS */
-.card span.material-icons {
-    display: block;
-    font-size: 52px;
-    margin-bottom: 18px;
-    color: #e6e6e6;
-}
-
-/* TITLES */
-.card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-/* TEXT */
-.card p {
-    font-size: 14px;
-    line-height: 1.5;
-    opacity: 0.85;
-}
-
-/* HOVER */
-.card:hover {
-    transform: translateY(-8px);
-    background: #163a63;
-}
-
-/* GOOGLE PLAY */
-.download {
-    display: flex;
-    justify-content: center;
-}
-
-.google-play-button img {
-    height: 60px;
-    transition: 0.3s ease;
-}
-
-.google-play-button img:hover {
-    transform: scale(1.07);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    body {
-        align-items: flex-start;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .title {
-        font-size: 36px;
-    }
-
-    .title .app-icon {
-        font-size: 40px;
-    }
+    left: 50%;
+    max-height: 50vh;
+    max-width: 35vw;
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); /* added opacity transition */
+    border-radius: 20px;
+    cursor: grab;
+    -webkit-user-drag: none;
+    user-select: none;
 }
