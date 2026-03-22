@@ -1,142 +1,188 @@
 /* RESET */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
     height: 100%;
-    margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 /* BODY */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0b1f3a;
+    background: linear-gradient(135deg, #0b1f3a 0%, #102946 100%);
     color: white;
-
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;  /* horizontal centering */
+    align-items: center;      /* vertical centering on desktop */
+    min-height: 100vh;        /* full viewport height */
     padding: 20px;
+    overflow-x: hidden;
 }
 
 /* PAGE */
 .page {
+    max-width: 1200px;
     width: 100%;
-    max-width: 1100px;
+    text-align: center;
 }
 
 /* HEADER */
 .header {
-    text-align: center; /* center the title text */
-    margin-bottom: 50px;
-    position: relative; /* anchor for absolute positioning */
+    position: relative;
+    margin-bottom: 60px;
+    width: 100%;
 }
 
-.title {
-    display: inline-block; /* shrink-wrap text */
-    font-size: 48px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin: 0;
-    position: relative; /* for absolute icon */
+/* Title + subtitle container */
+.title-wrapper {
+    display: inline-block;     /* shrink-wrap width */
+    position: relative;
 }
 
-/* icon on the left without shifting title */
-.title .app-icon {
+/* Title + subtitle stack centered */
+.title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* center title & subtitle */
+}
+
+/* Icon positioned to the left of the text */
+.app-icon {
     position: absolute;
-    right: 100%; /* move left of title */
+    left: -60px;               /* distance from text */
     top: 50%;
-    transform: translateY(-50%) translateX(-12px); /* adjust spacing */
+    transform: translateY(-50%);
     font-size: 50px;
-    color: white;
+    color: gold;
 }
 
-/* FEATURES */
+/* Title styling */
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* Subtitle styling */
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 4px;
+    opacity: 0.85;
+}
+
+/* FEATURES GRID */
 .features {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 32px;
 }
 
 /* CARDS */
 .card {
-    background: #112b4a;
-    padding: 28px;
-    border-radius: 14px;
+    background: linear-gradient(145deg, #112b4a, #0d223d);
+    padding: 32px;
+    border-radius: 16px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(145deg, #163a63, #124272);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
 }
 
 /* ICONS */
-.card span.material-icons {
+.card span.material-icons-outlined {
     display: block;
-    font-size: 52px;
+    font-size: 56px;
     margin-bottom: 18px;
-    color: #e6e6e6;
+    color: gold;
 }
 
 /* TITLES */
 .card h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 /* TEXT */
 .card p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.6;
     opacity: 0.85;
-}
-
-/* HOVER */
-.card:hover {
-    transform: translateY(-8px);
-    background: #163a63;
 }
 
 /* GOOGLE PLAY */
 .download {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .google-play-button img {
-    height: 60px;
-    transition: 0.3s ease;
+    height: 70px;
+    transition: transform 0.3s ease;
 }
 
 .google-play-button img:hover {
-    transform: scale(1.07);
+    transform: scale(1.08);
 }
 
 /* RESPONSIVE */
+/* For all screens below 900px (single or 2-column grid) */
 @media (max-width: 900px) {
+
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 600px) {
-    body {
-        align-items: flex-start;
+    /* Header stays stacked */
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
+    .title-wrapper {
+        margin-bottom: 20px;
+    }
+
+    /* Move Google Play button below header */
+    .download {
+        margin-top: 20px;
+        order: 1;
     }
 
     .title {
-        font-size: 36px;
+        font-size: 2.5rem;
     }
 
-    .title .app-icon {
+    .app-icon {
         font-size: 40px;
+        left: -50px;
+    }
+}
+
+/* For very small screens (<600px) */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
