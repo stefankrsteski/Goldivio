@@ -33,7 +33,13 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+	font-size: 2rem;
     font-weight: 600;
+}
+
+.logo-img {
+	height: 50px;
+	object-fit: contain;
 }
 
 .logo span.material-icons-outlined {
