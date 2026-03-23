@@ -33,13 +33,13 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-	font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
 .logo-img {
-	height: 50px;
-	object-fit: contain;
+    height: 40px;
+    object-fit: contain;
 }
 
 .logo span.material-icons-outlined {
@@ -133,21 +133,25 @@ body {
 }
 
 .shots {
-	margin-top: 40px;
+    margin-top: 40px;
     display: flex;
-    justify-content: center;   /* centers when content fits */
+    justify-content: center;
+    /* centers when content fits */
     gap: 20px;
-    flex-wrap: wrap;           /* allows centering on larger screens */
+    flex-wrap: wrap;
+    /* allows centering on larger screens */
 }
 
 .shots img {
     width: 220px;
     border-radius: 16px;
-	aspect-ratio: 9 / 20;       /* typical phone ratio */
-	border: 4px solid #000;     /* phone border */
-	border-radius: 45px;
-	overflow: hidden;
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    aspect-ratio: 9 / 20;
+    /* typical phone ratio */
+    border: 4px solid #000;
+    /* phone border */
+    border-radius: 45px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* DOWNLOAD */
@@ -162,8 +166,10 @@ body {
 }
 
 .download a img {
-    width: 200px;   /* adjust as needed */
-    height: auto;   /* maintain aspect ratio */
+    width: 200px;
+    /* adjust as needed */
+    height: auto;
+    /* maintain aspect ratio */
 }
 
 /* FOOTER */
