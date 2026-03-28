@@ -137,7 +137,7 @@ body {
     display: flex;
     justify-content: center;
     /* centers when content fits */
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     /* allows centering on larger screens */
 }
@@ -152,6 +152,11 @@ body {
     border-radius: 45px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.row {
+    display: flex;
+    gap: 30px;
 }
 
 /* DOWNLOAD */
