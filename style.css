@@ -137,13 +137,13 @@ body {
     display: flex;
     justify-content: center;
     /* centers when content fits */
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
     /* allows centering on larger screens */
 }
 
 .shots img {
-    width: 220px;
+    width: 200px;
     border-radius: 16px;
     aspect-ratio: 9 / 20;
     /* typical phone ratio */
@@ -156,7 +156,7 @@ body {
 
 .row {
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 /* DOWNLOAD */
